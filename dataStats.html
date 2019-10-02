@@ -49,10 +49,10 @@ report("#A2",answer)
 <div id="A3">
 <h3>Create a function to find the mean of the quiz grades for a given penguin.</h3>
 <script>
-
+    //i think this should work, but it doesn't seem to if I put it in the log with a substitution, we were missing the return part
 var Mean =function(penguin)
 {
-    d3.mean(penguin.quizes, getGrade)
+    return d3.mean(penguin.quizes, getGrade)
 }
     
 var answer=Mean;
@@ -63,7 +63,13 @@ report("#A3",answer)
 <div id="A4">
 <h3>Find the mean quiz score of each penguins.  Use one line of "code"</h3>
 <script>
-var answer= var quizmean [Mean(quizes)];
+var answer= classroom.map(Mean);
+
+//classroom.forEach(function(penguin)
+//{
+ //console.log(d3.mean(penguin.quizes, getGrade))
+//})
+    
 report("#A4",answer)    
 </script>
     </div>
@@ -71,7 +77,7 @@ report("#A4",answer)
 <div id="A5">
 <h3>Find the mean of all the quiz score of the class. </h3>
 <script>
-var answer="please complete";
+var answer=d3.mean(classroom.map(Mean));
 report("#A5",answer)    
 </script>
     </div>
